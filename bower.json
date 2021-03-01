@@ -1,0 +1,25 @@
+{
+  "name": "bourbon-neat-starter",
+  "description": "HTML Starter Template based on Bourbon/Neat",
+  "main": "index.js",
+  "authors": [
+    "Max Bulygin <maksym.bulygin@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize-scss": "normalize.scss#^6.0.0",
+    "bourbon": "^4.3.4",
+    "neat": "^2.1.0",
+    "animate.css": "^3.7.0",
+    "css-hamburgers": "^1.1.3"
+  }
+}

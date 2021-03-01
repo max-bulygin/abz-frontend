@@ -1,0 +1,83 @@
+/// Prevent OS X to render light text on dark backgrounds too bold:
+/// http://www.usabilitypost.com/2012/11/05/stop-fixing-font-smoothing/
+///
+/// 1. Chrome
+/// 2. Firefox
+/// 3. Revert to defaults if needed
+
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased; ///[1]
+    -moz-osx-font-smoothing: grayscale; ///[2]
+  } @else {
+    -webkit-font-smoothing: subpixel-antialiased; ///[3]
+    -moz-osx-font-smoothing: auto; ///[3]
+  }
+}
+
+/// Removes IOS tap highlighting
+
+@mixin no-tap-highlight() {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/// Removes any scrollbar from current container
+///
+/// 1. IE 10+
+/// 2. Firefox
+/// 3. Chrome, Safari
+
+@mixin hide-scrollbar() {
+  -ms-overflow-style: none; ///[1]
+  overflow: -moz-scrollbars-none; ///[2]
+  &::-webkit-scrollbar {
+    display: none; ///[3]
+  }
+}
+
+/// Removes arrow controls from inputs with number type
+
+@mixin hide-number-arrows() {
+  input[type="number"] {
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+/// Removes improper links styling for phone-like numbers on touch devices
+///
+/// 1. Disable targeting for this element
+/// 2. Remove link styles
+
+@mixin no-pointer-events() {
+  pointer-events: none; ///[1]
+  a {
+    text-decoration: none; ///[2]
+    color: inherit; ///[2]
+  }
+}
+
+/// Center item with unknown width and height
+
+@mixin center-unknown() {
+  @include position(absolute, 50% null null 50%);
+  transform: translate(-50%, -50%);
+}
+
+/// Reset default list styles
+
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/// Define default transition
+
+@mixin transit($p: map_get($transitions, prop), $t: map_get($transitions, time), $f: map_get($transitions, func)) {
+  transition: $p $t $f;
+}

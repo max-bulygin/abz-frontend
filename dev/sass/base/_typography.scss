@@ -90,6 +90,7 @@ body {
   font-weight: 400;
   color: $color__text;
   letter-spacing: .2px;
+  max-width: $body-max-width;
 }
 
 h1 {

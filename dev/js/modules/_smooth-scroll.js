@@ -1,56 +1,21 @@
-var $ = require('jquery');
-
 module.exports = function () {
 
-    $('a[href*="#"]')
-        .not('[href="#"]')
-        .not('[href="#0"]')
-        .click(function(event) {
-
-            if (
-                location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '')
-                &&
-                location.hostname === this.hostname
-            ) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-
-                if (target.length) {
-
-                    event.preventDefault();
-                    $('html, body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000, function() {
-
-                        var $target = $(target);
-                        $target.focus();
-                        if ($target.is(":focus")) {
-                            return false;
-                        } else {
-                            $target.attr('tabindex','-1');
-                            $target.focus();
-                        }
-                    });
-                }
+    var smoothScroll = {
+        links: document.querySelectorAll("a[href='#registerNow']"),
+        bindEvents: function () {
+            for (var i = 0; i < this.links.length; i++) {
+                this.links[i].addEventListener('click', this.clickHandler)
             }
-        });
+        },
+        clickHandler: function (e) {
+            e.preventDefault();
+            var href = this.getAttribute("href");
 
-    String.prototype.hashCode = function() {
-        var hash = 0;
-
-        try {
-
-            if (this.length == 0) return hash;
-
-            for (i = 0; i < this.length; i++) {
-                char = this.charCodeAt(i);
-                hash = ((hash << 5) - hash) + char;
-            }
-            return hash;
-
-        } catch (e) {
-            throw new Error('hashCode: ' + e);
+            document.querySelector(href).scrollIntoView({
+                behavior: "smooth"
+            });
         }
     };
+
+    smoothScroll.bindEvents();
 };

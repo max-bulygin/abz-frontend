@@ -1,8 +1,15 @@
 .page-header {
   padding: 8px 0;
+  background-color: #fff;
 
   @media screen and (min-width: $bp__sm) {
     padding: 18px;
+  }
+
+  &.is-active {
+    @include position(fixed, 0 0 null);
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
   }
 }
 

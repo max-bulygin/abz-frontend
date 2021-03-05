@@ -1,7 +1,7 @@
 module.exports = function () {
 
     var smoothScroll = {
-        links: document.querySelectorAll("a[href='#registerNow']"),
+        links: document.querySelectorAll("a[href='#registerNow'], a[href='#users']"),
         bindEvents: function () {
             for (var i = 0; i < this.links.length; i++) {
                 this.links[i].addEventListener('click', this.clickHandler)

@@ -80,3 +80,40 @@ fieldset {
 textarea {
   resize: vertical;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=PT+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  font-weight: 400;
+  color: $color__text;
+  letter-spacing: .2px;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 34px;
+  font-weight: 400;
+  
+  @media screen and (min-width: $bp__sm) {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  @media screen and (min-width: $bp__md) {
+    font-size: 50px;
+    line-height: 58px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 400;
+}
+
+img {
+  max-width: 100%;
+}

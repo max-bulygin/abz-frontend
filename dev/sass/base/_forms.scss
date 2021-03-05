@@ -1,0 +1,32 @@
+#{$all-text-inputs} {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  border: $form-border;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #fff;
+
+  .invalid & {
+    border: 1px solid $color__f-input-invalid;
+  }
+
+  .invalid &:focus {
+    border: 1px solid $color__f-input-invalid;
+    box-shadow: 0 0 0 3px rgba(219, 52, 69, .2);
+  }
+}
+
+label {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  color: $color__f-label-text;
+  display: block;
+  margin-bottom: 8px;
+}
+
+#{$all-text-inputs-focus} {
+  outline: none;
+  border: 1px solid $color__f-input-focus;
+  box-shadow: 0 0 0 3px rgba(128, 189, 255, .2);
+}

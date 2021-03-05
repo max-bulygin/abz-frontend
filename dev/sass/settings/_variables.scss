@@ -1,7 +1,27 @@
 // COLORS
 $color__selection-highlight: #b3d4fc;
-$color__brand-primary: #fff;
-$color__brand-secondary: #fff;
+$color__brand-primary: #ef5b4c;
+$color__brand-secondary: #1b4a8a;
+$color__bg-main: #fff;
+$color__bg-alt: #f9f9f3;
+$color__text: #393939;
+$color__button: $color__brand-primary;
+$color__button-hover: #d24335;
+$color__button-disabled: #d7d7d7;
+$color__button-disabled-text: #8d8c8c;
+$color__usercard-text: #4c4b4b;
+$color__usercard-name: #212529;
+$color__nav-item: #212529;
+$color__nav-item-hover: $color__brand-primary;
+$color__nav-item-active: $color__brand-secondary;
+$color__f-placeholder-text: #b2b9c0;
+$color__f-label-text: #212529;
+$color__f-input-focus:#80bdff;
+$color__f-input-invalid: #db3445;
+$color__hero: #fff;
+
+// FORMS
+$form-border: 1px solid #ced4da;
 
 // SOCIAL COLORS
 $facebook: #3b5998;
@@ -23,15 +43,14 @@ $whatsup: #25d366;
 $bp__xs: 480px;
 $bp__sm: 768px;
 $bp__md: 992px;
-$bp__lg: 1280px;
-$bp__xl: 1500px;
+$bp__lg: 1200px;
 
 // CONTAINERS
-$container--initial: 320px;
+$container--initial: 360px;
 $container--xs: 480px;
 $container--sm: 768px;
 $container--md: 992px;
-$container--lg: 1280px;
+$container--lg: 1170px;
 
 // TRANSITIONS
 $transitions: (

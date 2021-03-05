@@ -2,14 +2,42 @@
   @include prefixer(appearance, none, ("webkit", "moz"));
   display: inline-block;
   text-align: center;
-  padding: .8em 1em;
   text-decoration: none;
   outline: none;
   touch-action: manipulation;
   cursor: pointer;
   transition: all .2s;
 
-  &:hover {
+  padding: .7em 2em;
+  line-height: 1;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
 
+  @include font-smoothing(on);
+}
+
+.button--primary {
+  color: #fff;
+  background-color: $color__button;
+  min-width: 210px;
+
+  &:hover {
+    background-color: $color__button-hover;
+  }
+}
+
+.button--disabled {
+  color: $color__button-disabled-text;
+  background-color: $color__button-disabled;
+}
+
+.button--flat {
+  padding: .7em 0;
+  background-color: #fff;
+  color: $color__button;
+
+  &:hover {
+    color: $color__button-hover;
   }
 }

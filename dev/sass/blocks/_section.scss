@@ -1,0 +1,41 @@
+.section {
+  @include padding(60px null 75px);
+
+  @media screen and (min-width: $bp__sm) {
+    &:not(.hero) {
+      padding-bottom: 110px;
+  }
+  }
+}
+
+.section__heading,
+.section__text {
+  text-align: center;
+}
+
+.section__heading {
+  margin-bottom: 17px;
+
+  @media screen and (min-width: $bp__sm) {
+    margin-bottom: 47px;
+    margin-top: 55px;
+  }
+}
+
+.section__text {
+  margin-bottom: 23px;
+
+  @media screen and (min-width: $bp__sm) {
+    max-width: 462px;
+    @include margin(null auto null);
+  }
+}
+
+.section--users {
+  background-color: $color__bg-alt;
+}
+
+.section__show-more {
+  text-align: center;
+  margin-top: 16px;
+}

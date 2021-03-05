@@ -1,3 +1,6 @@
 .page-footer {
+  text-align: center;
+  @include padding(20px null);
+  border-top: $form-border;
 
 }

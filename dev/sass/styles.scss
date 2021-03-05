@@ -2,15 +2,12 @@
 @import "settings/variables";
 @import "settings/neat-grid";
 @import "settings/hamburger";
-@import "settings/owl-carousel";
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
 @import "../../bower_components/neat/core/neat";
 @import "../../bower_components/normalize-scss/sass/normalize/import-now";
 @import "../../bower_components/css-hamburgers/_sass/hamburgers/hamburgers";
-@import "../../bower_components/animate.css/source/base";
+//@import "../../bower_components/animate.css/source/base";
 // import required animations from source sub-folder
-@import "../../node_modules/owl.carousel/src/scss/owl.carousel";
-@import "../../node_modules/owl.carousel/src/scss/owl.theme.default";
 
 /// TOOLS
 @import "tools/functions";
@@ -20,15 +17,17 @@
 /// GENERIC STYLES
 @import "base/typography";
 @import "base/forms";
-@import "base/sprite";
 @import "base/layout";
 
 /// BLOCK STYLES
-@import "blocks/button";
-@import "blocks/hamburger";
-@import "blocks/media";
-@import "blocks/icons";
-@import "blocks/owl-carousel";
 @import "blocks/site";
 @import "blocks/site-header";
 @import "blocks/site-footer";
+@import "blocks/section";
+@import "blocks/button";
+@import "blocks/nav";
+@import "blocks/hamburger";
+@import "blocks/hero";
+@import "blocks/post";
+@import "blocks/usercard";
+@import "blocks/form";

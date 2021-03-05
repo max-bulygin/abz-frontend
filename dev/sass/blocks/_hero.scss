@@ -1,0 +1,44 @@
+.hero {
+  background-image: url('../img/content/banner-mobile.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media screen and (min-width: $bp__sm) {
+    background-image: url('../img/content/banner-tablet.jpg');
+  }
+
+  @media screen and (min-width: $bp__lg) {
+    background-image: url('../img/content/banner-desktop.jpg');
+  }
+}
+
+.hero__title {
+  text-transform: uppercase;
+  margin-top: 10px;
+
+  @media screen and (min-width: $bp__sm) {
+    padding-right: 30px;
+    margin-top: 0;
+  }
+}
+
+.hero__subtitle {
+  margin-bottom: 23px;
+}
+
+.hero__content {
+  text-align: center;
+  color: $color__hero;
+  @include font-smoothing(on);
+
+  @include grid-column(6);
+
+  @include grid-media($sm-grid) {
+    text-align: left;
+    @include grid-column(4)
+  }
+
+  @include grid-media($md-grid) {
+    @include grid-column(7)
+  }
+}

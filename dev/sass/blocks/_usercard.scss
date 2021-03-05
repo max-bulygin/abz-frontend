@@ -1,0 +1,57 @@
+.users-wrapper {
+  @include clearfix;
+}
+
+.users-wrapper__item {
+  @include grid-column(4);
+  @include grid-push(1);
+
+  @include grid-media($sm-grid) {
+    @include grid-column(2);
+  }
+
+  @include grid-media($md-grid) {
+    @include grid-column(4);
+  }
+}
+
+.usercard {
+  background-color: $color__bg-alt;
+  text-align: center;
+  color: $color__usercard-text;
+  padding: 10px 0;
+}
+
+.usercard__img {
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.usercard__name {
+  @include padding(14px null);
+  font-size: 24px;
+  line-height: 1.2;
+  color: #212529;
+  margin: 0;
+}
+
+.usercard__position {
+  line-height: 1.4;
+}
+
+.usercard__contact {
+  text-align: center;
+
+  > a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      color: $color__brand-secondary;
+    }
+  }
+}
+
+.usercard__email {
+  @include ellipsis();
+}

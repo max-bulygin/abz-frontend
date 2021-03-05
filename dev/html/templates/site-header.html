@@ -8,6 +8,7 @@
           content="ie=edge">
 
     <title>Document</title>
+    <link rel="shortcut icon" href="/img/favicon-32x32.png" type="image/png">
 
     <link rel="stylesheet" href="css/styles.css">
     <!--[if lt IE 9]>
@@ -16,20 +17,30 @@
 </head>
 <body class="site-body">
 <header class="page-header">
-    <div class="container grid-container">
+    <div class="container">
 
-        <button class="hamburger hamburger--slider"
-                type="button"
-                aria-label="Menu"
-                aria-controls="navigation">
+        <div class="page-header__content grid-full-width">
+            <div class="logo">
+                <img src="img/content/logo.svg" alt="tt logo">
+            </div>
+
+            <button class="hamburger hamburger--slider hidden-md-and-up"
+                    type="button"
+                    aria-label="Menu"
+                    aria-controls="navigation">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
             </span>
-        </button>
+            </button>
 
-        <nav id="navigation">
-            <!--navigation goes here-->
-        </nav>
+            <nav id="navigation" class="nav hidden-md-and-down">
+                <a href="#" class="nav__item">About me</a>
+                <a href="#" class="nav__item">Relationships</a>
+                <a href="#" class="nav__item">Requirements</a>
+                <a href="#" class="nav__item">Users</a>
+                <a href="#" class="nav__item">Sign Up</a>
+            </nav>
+        </div>
 
     </div>
 </header>

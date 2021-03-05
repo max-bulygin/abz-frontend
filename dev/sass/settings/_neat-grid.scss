@@ -5,7 +5,8 @@
 ///   https://robots.thoughtbot.com/the-release-of-neat-2-0-a-lightweight-and-flexible-sass-grid
 
 $neat-grid: (
-  gutter: 10px,
+  columns: 6,
+  gutter: 15px,
   color: rgba(#00d4ff, 0.5)
 );
 
@@ -15,18 +16,20 @@ $xs-grid: (
   media: $bp__xs
 );
 
-$sm-grid: (
+$sm-grid: ( //768px
+  columns: 6,
+  gutter: 30px,
   media: $bp__sm
 );
 
-$md-grid: (
-  media: $bp__md
+$md-grid: ( //992px
+  columns: 12,
+  gutter: 30px,
+  media: $bp__md,
 );
 
 $lg-grid: (
+  columns: 12,
+  gutter: 30px,
   media: $bp__lg
-);
-
-$xl-grid: (
-  media: $bp__xl
 );

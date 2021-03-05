@@ -1,0 +1,63 @@
+<section class="section section--register">
+	<div class="container">
+		<h1 class="section__heading">Register to get a work</h1>
+		<p class="section__text">Attention! After successful registration and alert, update the list of users in the block from the top</p>
+		<div class="form-wrapper">
+			<form class="form" action="#">
+				<div class="form__field">
+					<label for="name">Name</label>
+					<input id="name" type="text" placeholder="Your name">
+					<div class="form__message"></div>
+				</div>
+				<div class="form__field">
+					<label for="email">Email</label>
+					<input id="email" type="email" placeholder="Your email">
+					<div class="form__message"></div>
+				</div>
+				<div class="form__field form__phone">
+					<label for="phone">Phone number</label>
+					<input id="phone" type="text" placeholder="+380 XX XXX XX XX">
+					<div class="form__message">Enter phone number in open format</div>
+				</div>
+				<div class="form__field">
+					<p class="form__label">Select your position</p>
+					<div class="form__message"></div>
+					<label class="radio-label" for="positionChoice1">Frontend developer
+						<input type="radio" id="positionChoice1"
+							   name="position" value="frontend" checked>
+						<span class="checkmark"></span>
+					</label>
+
+					<label class="radio-label" for="positionChoice2">Backend developer
+						<input type="radio" id="positionChoice2"
+							   name="position" value="backend">
+						<span class="checkmark"></span>
+					</label>
+
+					<label class="radio-label" for="positionChoice3">Designer
+						<input type="radio" id="positionChoice3"
+							   name="position" value="designer">
+						<span class="checkmark"></span>
+					</label>
+
+					<label class="radio-label" for="positionChoice4">QA
+						<input type="radio" id="positionChoice4"
+							   name="position" value="qa">
+						<span class="checkmark"></span>
+					</label>
+				</div>
+				<div class="form__field invalid">
+					<p class="form__label">Photo</p>
+					<label class="form__photo" for="photo">
+						<input id="photo" type="file" aria-label="File browser example">
+						<span class="form__file-custom"></span>
+					</label>
+					<div class="form__message">Error</div>
+				</div>
+				<div class="form__field form__submit">
+					<button class="button button--primary" type="submit">Sing up now</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

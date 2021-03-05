@@ -1,0 +1,179 @@
+[type="radio"],
+[type="file"] {
+
+  &:focus ~ span {
+    outline: none;
+    border: 1px solid $color__f-input-focus;
+    box-shadow: 0 0 0 3px rgba(128, 189, 255, .2);
+  }
+
+  .invalid & ~ span {
+    border: 1px solid $color__f-input-invalid;
+  }
+
+  .invalid &:focus ~ span {
+    box-shadow: 0 0 0 3px rgba(219, 52, 69, .2);
+  }
+}
+
+[type="file"] {
+  &:focus ~ span:before {
+    border: 1px solid $color__f-input-focus;
+  }
+
+  .invalid & ~ span:before {
+    border: 1px solid $color__f-input-invalid;
+  }
+
+  .invalid &:focus ~ span:before {
+    box-shadow: 0 0 0 3px rgba(219, 52, 69, .2);
+  }
+}
+
+.form__field {
+  margin-bottom: 18px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.form__phone {
+  margin-bottom: 10px;
+}
+
+.form__submit {
+  text-align: center;
+}
+
+.form__label {
+  margin-bottom: .9em;
+  margin-top: 0;
+}
+
+.form__message {
+  font-size: 12px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #6c757d;
+
+  .invalid & {
+    color: #f44336;
+  }
+}
+
+.radio-label {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 6px;
+}
+
+[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  @include size(0);
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -.5em;
+  @include size(1em);;
+  background-color: #fff;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+}
+
+/* When the radio button is checked, add a blue background */
+input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.checkmark:after {
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,.3);
+}
+
+// FORM FILE
+
+.form__photo {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  height: 2.5rem;
+  width: 100%;
+  margin-bottom: 0;
+
+  [type="file"] {
+    margin: 0;
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}
+
+.form__file-custom {
+  @include position(absolute, 0 0 null);
+  z-index: 5;
+  height: 2.5rem;
+  padding: .5rem 1rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #fff;
+  border: $form-border;
+  border-radius: .25rem;
+  user-select: none;
+
+  &:before {
+    content: "Browse";
+    @include position(absolute, -1px -1px null null);
+    z-index: 6;
+    display: block;
+    @include size(83px 2.5rem);
+    padding: .5rem 1rem;
+    line-height: 1.5;
+    color: #555;
+    background-color: #eee;
+    border: $form-border;
+    border-radius: 0 4px 4px 0;
+  }
+
+  &:after {
+    content: 'Upload your photo';
+  }
+
+}
+
+.form-wrapper {
+  @include grid-column(6);
+
+  @include grid-media($sm-grid) {
+    @include grid-column(4);
+    @include grid-push(1);
+  }
+
+  @include grid-media($md-grid) {
+    @include grid-column(6);
+    @include grid-push(3);
+  }
+}

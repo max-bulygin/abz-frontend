@@ -2,7 +2,8 @@
   margin: 0 auto;
   width: $container--initial;
   position: relative;
-  @include grid-container;
+  @include grid-container();
+  //@include grid-visual;
 
   @include grid-media($xs-grid) {
     width: $container--xs;
@@ -14,29 +15,27 @@
 
   @include grid-media($md-grid) {
     width: $container--md;
+    //@include grid-visual;
   }
 
   @include grid-media($lg-grid) {
     width: $container--lg;
+    //@include grid-visual;
   }
 }
 
-//.left {
-//  @include grid-column(12);
-//  @include grid-media($xs-grid) {
-//    @include grid-column(6);
-//  }
-//  @include grid-media($sm-grid) {
-//    @include grid-column(4);
-//  }
-//}
-//
-//.right {
-//  @include grid-column(12);
-//  @include grid-media($xs-grid) {
-//    @include grid-column(6);
-//  }
-//  @include grid-media($sm-grid) {
-//    @include grid-column(8);
-//  }
-//}
+.grid-container {
+  @include grid-container;
+}
+
+.grid-full-width {
+  @include grid-column(6);
+
+  @include grid-media($sm-grid) {
+    @include grid-column(6);
+  }
+
+  @include grid-media($md-grid) {
+    @include grid-column(12);
+  }
+}

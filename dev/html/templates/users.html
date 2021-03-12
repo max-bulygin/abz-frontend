@@ -2,50 +2,18 @@
 	<div class="container">
 		<h1 class="section__heading">Our cheerful users</h1>
 		<p class="section__text">Attention! Sorting users by registration date</p>
-		<div class="users-wrapper">
-			<article class="users-wrapper__item">
-				<div class="usercard">
-					<img class="usercard__img" src="http://via.placeholder.com/74" alt="">
-					<p class="usercard__name">Maximillian</p>
-					<div class="usercard__position">Leading specialist of the Control Department</div>
-					<div class="usercard__contact">
-						<a href="mailto:email@gmail.com" class="usercard__email">controldepartment@gmail</a>
-					</div>
-					<div class="usercard__contact">
-						<a href="tel:+380 50 678 03" class="usercard__phone">+380 50 678 03 24</a>
-					</div>
-				</div>
-			</article>
-
-			<article class="users-wrapper__item">
-				<div class="usercard">
-					<img class="usercard__img" src="http://via.placeholder.com/74" alt="">
-					<p class="usercard__name">Adolph Blaine Charles David Earl Matthew Matthew</p>
-					<div class="usercard__position">Contextual advertising specialist</div>
-					<div class="usercard__contact">
-						<a href="mailto:longusernameemail@gmail.com" class="usercard__email">adolph.blainecharles@gmail.com</a>
-					</div>
-					<div class="usercard__contact">
-						<a href="tel:+380 50 678 03" class="usercard__phone">+380 50 678 03 24</a>
-					</div>
-				</div>
-			</article>
-			<article class="users-wrapper__item">
-				<div class="usercard">
-					<img class="usercard__img" src="http://via.placeholder.com/74" alt="">
-					<p class="usercard__name">Elizabeth</p>
-					<div class="usercard__position">Frontend developer</div>
-					<div class="usercard__contact">
-						<a href="mailto:longusernameemail@gmail.com" class="usercard__email">elisabet.front@gmail.com</a>
-					</div>
-					<div class="usercard__contact">
-						<a href="tel:+380 50 678 03" class="usercard__phone">+380 50 678 03 24</a>
-					</div>
-				</div>
-			</article>
-		</div>
-		<div class="section__show-more">
-			<button id="showMoreBtn" class="button button--primary js-button">Show more</button>
+		<div id="v-users">
+			<div class="users-wrapper">
+				<user-component v-for="user in users" :user="user" :key="user.id"/>
+			</div>
+			<div class="section__show-more">
+				<button
+					id="showMoreBtn"
+					class="button button--primary"
+					@click="showMore"
+					:class="{hidden : lastUser}"
+				>Show more</button>
+			</div>
 		</div>
 	</div>
 </section>

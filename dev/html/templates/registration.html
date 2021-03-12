@@ -3,59 +3,40 @@
 		<h1 id="registerNow" class="section__heading">Register to get a work</h1>
 		<p class="section__text">Attention! After successful registration and alert, update the list of users in the block from the top</p>
 		<div class="form-wrapper">
-			<form class="form" action="#">
-				<div class="form__field">
+			<form enctype="multipart/form-data" id="v-registerForm" class="form" @submit.prevent="submitForm">
+				<div class="form__field" :class="{ invalid: !valid.name && name }">
 					<label for="name">Name</label>
-					<input id="name" type="text" placeholder="Your name">
-					<div class="form__message"></div>
+					<input id="name" type="text" placeholder="Your name" v-model="name" @blur="validateName">
+					<div class="form__message">Username should contain 2-60 characters</div>
 				</div>
-				<div class="form__field">
+				<div class="form__field" :class="{ invalid: !valid.email && email }">
 					<label for="email">Email</label>
-					<input id="email" type="email" placeholder="Your email">
-					<div class="form__message"></div>
+					<input id="email" type="email" placeholder="Your email" v-model="email" @blur="validateEmail">
+					<div class="form__message">User email, must be a valid email according to RFC2822</div>
 				</div>
-				<div class="form__field form__phone">
+				<div class="form__field form__phone" :class="{ invalid: !valid.phone && phone }">
 					<label for="phone">Phone number</label>
-					<input id="phone" type="text" placeholder="+380 XX XXX XX XX">
-					<div class="form__message">Enter phone number in open format</div>
+					<input id="phone" type="text" placeholder="+380 XX XXX XX XX" v-model="phone" @blur="validatePhone">
+					<div class="form__message">Number should start with code of Ukraine +380</div>
 				</div>
 				<div class="form__field">
 					<p class="form__label">Select your position</p>
-					<div class="form__message"></div>
-					<label class="radio-label" for="positionChoice1">Frontend developer
-						<input type="radio" id="positionChoice1"
-							   name="position" value="frontend" checked>
-						<span class="checkmark"></span>
-					</label>
-
-					<label class="radio-label" for="positionChoice2">Backend developer
-						<input type="radio" id="positionChoice2"
-							   name="position" value="backend">
-						<span class="checkmark"></span>
-					</label>
-
-					<label class="radio-label" for="positionChoice3">Designer
-						<input type="radio" id="positionChoice3"
-							   name="position" value="designer">
-						<span class="checkmark"></span>
-					</label>
-
-					<label class="radio-label" for="positionChoice4">QA
-						<input type="radio" id="positionChoice4"
-							   name="position" value="qa">
+					<label v-for="{id, name} in positions" class="radio-label" :for="id">{{name}}
+						<input type="radio" :id="id"
+							   name="position_id" :value="id" v-model="pickedPosition">
 						<span class="checkmark"></span>
 					</label>
 				</div>
-				<div class="form__field invalid">
+				<div class="form__field" :class="{ invalid: !valid.photo && photo }">
 					<p class="form__label">Photo</p>
 					<label class="form__photo" for="photo">
-						<input id="photo" type="file" aria-label="File browser example">
+						<input id="photo" type="file" accept="image/*" @change="validatePhoto">
 						<span class="form__file-custom"></span>
 					</label>
-					<div class="form__message">Error</div>
+					<div class="form__message">Only jpeg/jpg image formats are allowed. 70x70px minimum, 5Mb max</div>
 				</div>
 				<div class="form__field form__submit">
-					<button class="button button--primary" type="submit">Sing up now</button>
+					<button :disabled="!valid.all" class="button button--primary" :class="{ 'button--disabled' : !valid.all}" type="submit">Sing up now</button>
 				</div>
 			</form>
 		</div>

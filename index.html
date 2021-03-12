@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible"
+          content="ie=edge">
+
+    <title>ABZ Test Task</title>
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=PT+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body class="site-body">
+<header id="stickyHeader" class="page-header js-header">
+    <div class="container">
+
+        <div class="page-header__content grid-full-width">
+            <div class="logo">
+                <img src="img/logo.svg" alt="tt logo">
+            </div>
+
+            <button class="hamburger hamburger--slider hidden-md-and-up"
+                    type="button"
+                    aria-label="Menu"
+                    aria-controls="navigation">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+            </button>
+
+            <nav id="navigation" class="nav hidden-md-and-down">
+                <a href="#registerNow" class="nav__item">About me</a>
+                <a href="#registerNow" class="nav__item">Relationships</a>
+                <a href="#registerNow" class="nav__item">Requirements</a>
+                <a href="#users" class="nav__item">Users</a>
+                <a href="#registerNow" class="nav__item">Sign Up</a>
+            </nav>
+        </div>
+
+    </div>
+</header>
+<main class="site-main">
+<section class="section section--hero hero">
+	<div class="container">
+		<div class="hero__content">
+			<h1 class="hero__title">Test assignment for Frontend Developer position</h1>
+			<p class="hero__subtitle">We kindly remind you that your test assignment should be submitted as a link to github/bitbucket repository. <span class="hidden-sm-and-down">Please be patient, we consider and respond to every application that meets minimum requirements. We look forward to your submission. Good luck! The photo has to scale in the banner area on the different screens</span></p>
+			<a href="#registerNow" class="button button--primary hero__cta">Sing up now</a>
+		</div>
+	</div>
+</section>
+<section class="section section--acquainted">
+	<div class="container">
+		<h1 class="section__heading">Let's get acquainted</h1>
+		<article class="post">
+			<figure class="post__image">
+				<img src="img/man-laptop-v1.svg" alt="beard man with laptop">
+			</figure>
+			<div class="post__content">
+				<h2 class="post__title">I am cool frontend developer</h2>
+				<div class="post__message">
+					<p>We will evaluate how clean your approach to writing CSS and Javascript code is. You can use any CSS and Javascript 3rd party libraries without any restriction.</p>
+					<p>If 3rd party css/javascript libraries are added to the project via bower/npm/yarn you will get bonus points. If you use any task runner (gulp/webpack) you will get bonus points as well. Slice service directory page PSD mockup into HTML5/CSS3.</p>
+				</div>
+				<div class="post__cta"><a href="#registerNow" class="button button--flat">Sing up now</a></div>
+			</div>
+		</article>
+	</div>
+</section>
+<section id="users" class="section section--users">
+	<div class="container">
+		<h1 class="section__heading">Our cheerful users</h1>
+		<p class="section__text">Attention! Sorting users by registration date</p>
+		<div id="v-users">
+			<div class="users-wrapper">
+				<user-component v-for="user in users" :user="user" :key="user.id"/>
+			</div>
+			<div class="section__show-more">
+				<button
+					id="showMoreBtn"
+					class="button button--primary"
+					@click="showMore"
+					:class="{hidden : lastUser}"
+				>Show more</button>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section section--register">
+	<div class="container">
+		<h1 id="registerNow" class="section__heading">Register to get a work</h1>
+		<p class="section__text">Attention! After successful registration and alert, update the list of users in the block from the top</p>
+		<div class="form-wrapper">
+			<form enctype="multipart/form-data" id="v-registerForm" class="form" @submit.prevent="submitForm">
+				<div class="form__field" :class="{ invalid: !valid.name && name }">
+					<label for="name">Name</label>
+					<input id="name" type="text" placeholder="Your name" v-model="name" @blur="validateName">
+					<div class="form__message">Username should contain 2-60 characters</div>
+				</div>
+				<div class="form__field" :class="{ invalid: !valid.email && email }">
+					<label for="email">Email</label>
+					<input id="email" type="email" placeholder="Your email" v-model="email" @blur="validateEmail">
+					<div class="form__message">User email, must be a valid email according to RFC2822</div>
+				</div>
+				<div class="form__field form__phone" :class="{ invalid: !valid.phone && phone }">
+					<label for="phone">Phone number</label>
+					<input id="phone" type="text" placeholder="+380 XX XXX XX XX" v-model="phone" @blur="validatePhone">
+					<div class="form__message">Number should start with code of Ukraine +380</div>
+				</div>
+				<div class="form__field">
+					<p class="form__label">Select your position</p>
+					<label v-for="{id, name} in positions" class="radio-label" :for="id">{{name}}
+						<input type="radio" :id="id"
+							   name="position_id" :value="id" v-model="pickedPosition">
+						<span class="checkmark"></span>
+					</label>
+				</div>
+				<div class="form__field" :class="{ invalid: !valid.photo && photo }">
+					<p class="form__label">Photo</p>
+					<label class="form__photo" for="photo">
+						<input id="photo" type="file" accept="image/*" @change="validatePhoto">
+						<span class="form__file-custom"></span>
+					</label>
+					<div class="form__message">Only jpeg/jpg image formats are allowed. 70x70px minimum, 5Mb max</div>
+				</div>
+				<div class="form__field form__submit">
+					<button :disabled="!valid.all" class="button button--primary" :class="{ 'button--disabled' : !valid.all}" type="submit">Sing up now</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+</main>
+<footer class="page-footer">
+    <div class="container">
+        <div class="copyright">&copy; abz.agency specially for the test task</div>
+    </div>
+</footer>
+
+<div id="alert">
+    <div class="overlay" :class=" {'overlay--is-open' : isOpen }">
+        <div class="alert">
+            <div class="alert__header">
+                <div class="alert__text">Congratulations!</div>
+                <div class="alert__close" @click = "hide">&#10799;</div>
+            </div>
+            <div class="alert__body">{{message}}</div>
+            <div class="alert__footer">
+                <button class="button button--primary alert__button" @click = "hide">Great</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>-->
+<script src="js/bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

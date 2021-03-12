@@ -106,7 +106,7 @@ gulp.task('css', function () {
             compatibility: 'ie9',
             debug: true
         }))
-        .pipe($.rename('styles.min.css'))
+        // .pipe($.rename('styles.min.css'))
         .pipe(gulp.dest(Paths.DIST + 'css'))
         .pipe($.size({title: 'css:minified'}));
 });
@@ -160,7 +160,7 @@ gulp.task('copy', function () {
         .pipe(gulp.dest(Paths.DIST))
         .pipe($.size({title: 'html'}));
 
-    gulp.src(Paths.JS + 'bundle.min.js')
+    gulp.src([Paths.JS + 'bundle.min.js', Paths.JS + 'app.js'])
         .pipe(gulp.dest(Paths.DIST + 'js'))
         .pipe($.size({
             title: 'scripts',

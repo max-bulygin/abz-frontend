@@ -17,14 +17,6 @@
   }
 }
 
-label {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 400;
-  color: $color__f-label-text;
-  display: block;
-  margin-bottom: 8px;
-}
-
 #{$all-text-inputs-focus} {
   outline: none;
   border: 1px solid $color__f-input-focus;

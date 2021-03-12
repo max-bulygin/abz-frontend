@@ -30,6 +30,11 @@
 .button--disabled {
   color: $color__button-disabled-text;
   background-color: $color__button-disabled;
+
+  &:hover {
+    background-color: $color__button-disabled;
+    cursor: initial;
+  }
 }
 
 .button--flat {

@@ -1,0 +1,54 @@
+.overlay {
+  @include position(fixed, 0 100% 100% 0);
+  background-color: rgba(#000, .5);
+  @include size(100% 100vh);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.overlay--is-open {
+  display: flex;
+}
+
+.alert {
+  width: 395px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background-color: #fff;
+}
+
+.alert__header,
+.alert__body,
+.alert__footer {
+  border-bottom:  1px solid #eceef1;
+  padding: 20px 16px;
+}
+
+.alert__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+}
+
+.alert__close {
+  cursor: pointer;
+}
+
+.alert__close {
+  @include size(12px);
+  color: #7b7b7b;
+  line-height: 0;
+  font-size: 1.2em;
+}
+
+.alert__footer {
+  text-align: right;
+  border-bottom: none;
+}
+
+.alert__button {
+  min-width: unset;
+}

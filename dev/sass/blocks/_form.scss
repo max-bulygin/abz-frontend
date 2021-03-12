@@ -34,7 +34,7 @@
   margin-bottom: 18px;
 
   &:last-child {
-    margin-bottom: 0;
+    @include margin(40px null 0);
   }
 }
 
@@ -46,9 +46,18 @@
   text-align: center;
 }
 
+//.form__label {
+//  margin-bottom: .9em;
+//  margin-top: 0;
+//}
+
+label,
 .form__label {
-  margin-bottom: .9em;
-  margin-top: 0;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  color: $color__f-label-text;
+  display: block;
+  @include margin(0 null 8px);
 }
 
 .form__message {
@@ -56,9 +65,11 @@
   line-height: 28px;
   font-weight: 400;
   color: #6c757d;
+  display: none;
 
   .invalid & {
     color: #f44336;
+    display: block;
   }
 }
 
@@ -115,7 +126,7 @@ input:checked ~ .checkmark:after {
   box-shadow: 1px 1px 1px 0 rgba(0,0,0,.3);
 }
 
-// FORM FILE
+// FORM FILE UPLOAD
 
 .form__photo {
   position: relative;

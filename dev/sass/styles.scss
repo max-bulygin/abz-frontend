@@ -16,7 +16,7 @@
 
 /// GENERIC STYLES
 @import "base/typography";
-@import "base/forms";
+@import "base/inputs";
 @import "base/layout";
 
 /// BLOCK STYLES
@@ -31,3 +31,4 @@
 @import "blocks/post";
 @import "blocks/usercard";
 @import "blocks/form";
+@import "blocks/alert";

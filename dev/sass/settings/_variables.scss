@@ -1,5 +1,4 @@
 // COLORS
-$color__selection-highlight: #b3d4fc;
 $color__brand-primary: #ef5b4c;
 $color__brand-secondary: #1b4a8a;
 $color__bg-main: #fff;
@@ -19,9 +18,13 @@ $color__f-label-text: #212529;
 $color__f-input-focus:#80bdff;
 $color__f-input-invalid: #db3445;
 $color__hero: #fff;
+$color__selection-highlight: #b3d4fc;
 
-// FORMS
+// FORM BORDER
 $form-border: 1px solid #ced4da;
+
+// HEADER/FOOTER BORDER
+$head-foot-border: 1px solid #ececec;
 
 // SOCIAL COLORS
 $facebook: #3b5998;
